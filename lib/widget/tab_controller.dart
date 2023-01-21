@@ -1,3 +1,4 @@
+import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
 import 'card.dart';
@@ -14,39 +15,79 @@ class TabControllerItems extends StatelessWidget {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
-            bottom: TabBar(
-              labelColor: Colors.red,
+            bottom: ButtonsTabBar(
+              // indicator: BoxDecoration(border: Border.all()),
+              backgroundColor: Colors.grey.withOpacity(0.92),
               tabs: [
                 Tab(
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.green.withOpacity(0.92),
-                        ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey.withOpacity(0.92),
+                    ),
+                    width: 80,
+                    height: 40,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 30,
+                            height: 20,
+                            // color: Colors.lightBlue,
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.lightBlue),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "work",
+                            style: TextStyle(fontSize: 10),
+                          )
+                        ],
                       ),
-                      Text(
-                        " 1 pack",
-                      )
-                    ],
+                    ),
                   ),
                 ),
                 Tab(
-                  icon: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
                       decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue.withOpacity(0.92),
-                  )),
-                  text: " 2 pack",
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey.withOpacity(0.92),
+                      ),
+                      width: 80,
+                      height: 40,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              // color: Colors.lightBlue,
+                              decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.lightBlue),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text("work")
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
           body: Container(
-            height: 300,
+            height: 250,
             child: TabBarView(
               children: <Widget>[
                 // tabBarViewItem(),
