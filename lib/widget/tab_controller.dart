@@ -12,18 +12,27 @@ class TabControllerItems extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
             bottom: TabBar(
+              labelColor: Colors.red,
               tabs: [
                 Tab(
-                  icon: Container(
-                    width: 10,
-                    height: 10,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.green.withOpacity(0.92),
-                    ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.green.withOpacity(0.92),
+                        ),
+                      ),
+                      Text(
+                        " 1 pack",
+                      )
+                    ],
                   ),
-                  text: " 1 pack",
                 ),
                 Tab(
                   icon: Container(
@@ -36,14 +45,17 @@ class TabControllerItems extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              // tabBarViewItem(),
-              myCard(),
-              Container(
-                child: Text("tab 2"),
-              ),
-            ],
+          body: Container(
+            height: 300,
+            child: TabBarView(
+              children: <Widget>[
+                // tabBarViewItem(),
+                myCard(),
+                Container(
+                  child: Text("tab 2"),
+                ),
+              ],
+            ),
           ),
         ),
         // Padding(
